@@ -17,6 +17,25 @@ Syntax highlighted code block
 
 - Bulleted
 - List
+# ggplot plot
+p2<- ggplot(data=d, aes(x = Petal.Length, y = Petal.Width)) 
+p2 + geom_point(aes(color=Species, shape=Species)) 
+p2
+
+# box plot
+boxplot(d$Petal.Length~Species,data=d, xlab="Species", ylab="Sepal Length", main="Iris Boxplot")
+
+# ggplot box plot
+box <- ggplot(data=d, aes(x=Species, y=Sepal.Length))
+box + geom_boxplot(aes(fill=Species)) 
+ylab("Sepal Length") + ggtitle("Iris Boxplot") 
+
+#histogram 
+hist(d$Sepal.Width, breaks=5)
+
+# ggplot histogram 
+histogram<- ggplot(data=d, aes(x=Sepal.Width))+xlab("Sepal Width") +  ylab("Frequency") + ggtitle("ggplot Histogram of Sepal Width")
+histogram + geom_histogram(binwidth=0.3,color="grey", aes(fill=Species))
 
 1. Numbered
 2. List
